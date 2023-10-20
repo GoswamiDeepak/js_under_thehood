@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event by Dev D</title>
+  </head>
+  <body>
+    <div>
+      <ul id="images">
+        <li>
+          <p id="img1">image 1</p>
+        </li>
+        <li>
+          <p id="img2">image 2</p>
+        </li>
+        <li>
+          <p id="img3">image 3</p>
+        </li>
+        <li>link</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // step 1
+    // document.getElementById("img1").onclick = function(){
+    //     alert("click me!")
+    // }
+
+    //step 2 (main for propogation)
+    // document.getElementById("images").addEventListener('click',function(){
+    //     console.log("click me outside!")
+    // },false);
+    // document.getElementById("img2").addEventListener('click',function(e){
+    //     e.stopPropagation();
+    //     console.log("click me inside!")
+    // },false)
+    //type, timestamp, defaultprevented, target,srcElement,currentTarget
+    //clintx clinty, screeny, screenx
+    //altkey, crtlkey, shiftkey, keycode
+
+    //step 3 (remove element by click)
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target)
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        const removeElm = e.target.parentNode;
+        removeElm.remove()
+        removeElm.parentNode.removeChild(removeElm)
+    })
+
+  </script>
+</html>

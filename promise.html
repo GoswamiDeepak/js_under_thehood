@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise</title>
+  </head>
+  <body>
+    <h1>Promise</h1>
+    <p>
+      A <a>Promise</a> is an object representing the eventual completion or
+      failure of an aynschronous operation.
+    </p>
+  </body>
+  <script>
+    //creating a promise
+    // const promiseOne = new Promise(function (resolve,reject){
+    //     //Do an async task, DB calls, crptography, network
+    //     setTimeout(function(){
+    //         //do something
+    //         console.log('async promise work')
+    //         resolve()
+    //     },1000)
+    // })
+    // console.log(promiseOne)
+    // promiseOne.then(()=>{
+    //     console.log('resolved promise')
+    // })
+
+    //example 2
+    // new Promise(function (resolve,reject){
+    //     setTimeout(() => {
+    //         console.log('async task 2')
+    //         resolve();
+    //     }, 1000);
+    // }).then(()=>{
+    //     console.log("async 2 resolved");
+    // })
+
+    //example 3
+    // const promisethree = new Promise((resolve,reject)=>{
+    //     setTimeout(() => {
+    //         const isTrue = false;
+    //         if(isTrue){
+    //             resolve({username:"deepak", age: 30})
+    //         }else {
+    //             reject('failled')
+    //         }
+
+    //     }, 1000);
+    // })
+    // promisethree.then((user)=>{
+    //     console.log(user)
+    //     return user.username; //chaining promise
+    // }).then((username)=>{
+    //     console.log(username)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
+
+    //example 4 (async / await task)
+    const promiseFour = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let error = false;
+        if (!error) {
+          resolve({ courseName: "javascript", price: 999 });
+        } else {
+          reject("failled");
+        }
+      }, 1000);
+    });
+
+    async function handlePromise(refPromise) {
+      try {
+        const responce = await refPromise; //network call or handle promise
+        console.log(responce);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    handlePromise(promiseFour);
+  </script>
+</html>
