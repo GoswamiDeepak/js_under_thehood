@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <h1>Protoype</h1>
+    <p>
+      Prototypes are mechnism by which java script inherit feature from one
+      another.
+    </p>
+    <p>Function does not inherit feature(property and method)</p>
+  </body>
+  <script>
+    const person = {
+        isHuman: false,
+        printIntroduction: function () {
+            console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+        },
+    };
+
+    const me = Object.create(person);
+
+    console.log(me);
+
+  </script>
+</html>

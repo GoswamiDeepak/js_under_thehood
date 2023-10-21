@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <p>
+      The Object.create() static method creates a new object, using an existing
+      object as the prototype of the newly created object.
+    </p>
+  </body>
+  <script>
+    //Object.create()
+    // Object.create(proto);
+    // Object.create(proto, propertiesObject);
+    let person = {
+      firstName: "John",
+      lastName: "Doe",
+      fullName: function () {
+        return this.firstName + " " + this.lastName;
+      },
+    };
+
+    // let me = Object.create(person)
+
+
+    // 1 console 
+    // console.log(me);
+
+    
+    // let person2 = {
+    //   city: "Delhi",
+    //   pincode: "2811221",
+    //   cityAddress: function () {
+    //     return this.city + " " + this.pincode;
+    //   },
+    // };
+
+    // person2.prototype= Object.create(person) ---this line only works with function constructors
+    // // 2nd console 
+    // console.log(person2)
+
+  </script>
+</html>

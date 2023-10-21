@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Function</title>
+  </head>
+  <body>
+    <h2>Constructor Function</h2>
+  </body>
+  <script>
+    //object literal--------------------
+    // const user = {
+    //     username : "Deepak",
+    //     age : 31,
+    //     checkUser: function(){
+    //         console.log(`My name is ${this.username} and Age is ${this.age}`);
+    //         console.log(this)//refer to object context
+    //     },
+    // }
+    // console.log(user.checkUser());
+
+    // function checkFunc (){
+    //     const username = "Deepak Goswami";
+    //     console.log(this.innerHeight)
+    // }
+
+
+    //consturctor function
+    function User (username, age, email){
+        this.username = username;
+        this.age = age;
+        this.email = email;
+        this.checkAge = ()=>{
+        console.log(this.age)
+        if(this.age > 18){
+            console.log("You are Adult Now")
+            // console.log(this)
+        }
+    };
+       
+    }
+    const newUserOne = new User("amit", 22, "amit@example.com",)
+    console.log(newUserOne.checkAge())
+  </script>
+</html>
