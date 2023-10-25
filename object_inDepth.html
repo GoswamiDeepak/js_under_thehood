@@ -1,0 +1,52 @@
+<body>
+  <script>
+    // Object Literal
+    //exmaple --------1
+    const user = {
+      fistName: "Deepak",
+      lastName: "Goswami",
+      fullname: function () {
+        console.log(`My name is ${this.fistName} ${this.lastName}`);
+      },
+    };
+    //exmaple --------2
+    const user2 = new Object({
+      fistName: "John",
+      lastName: "doe",
+      fullname() {
+        console.log(`My name is ${this.fistName} ${this.lastName}`);
+      },
+    });
+    //   console.log(user2);
+    //   console.log(user2.fullname());
+    //exmaple --------3
+    const address = Object.create(user);//create a new object, using an existing object as prototype, and prototype is the mechanism by which javascript objects inherit features from one another.
+    address.pincode = 281121;
+    Object.setPrototypeOf(address,{
+        getNone(){
+            console.log(this.pincode)
+        }
+    })
+    //override the object.create prototype with newly added prototype
+    // console.log(address.getNone());
+
+
+    //getter setter in object
+    //---setter------
+    const person = {
+        firstName : "John",
+        lastName : "Doe",
+        language : "",
+        set lang(lang){
+            this.language = lang
+        },
+
+        get langu(){
+            return this.language
+        }
+    }
+
+    person.lang = "English"
+    console.log(person.langu);
+  </script>
+</body>

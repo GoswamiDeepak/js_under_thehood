@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+</body>
+<script>
+    function ObjFnc(firstname,lastname ){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        fullname =function(){
+            return this.firstname + this.lastname;
+        }
+    }
+
+    const newobj= new ObjFnc("deepak", "goswami");
+    console.log(newobj.fullname());
+
+    // if(newobj instanceof objFnc){
+    //     console.log('return true');
+    // }
+
+</script>
+</html>
